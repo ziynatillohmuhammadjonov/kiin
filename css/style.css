@@ -38,7 +38,31 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+/* SCROLL */
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--primary-bg-color);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--pirmary-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pirmary-color);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -90,8 +114,13 @@ img {
   letter-spacing: 1.575px;
 }
 /* HEADER */
+.header__top {
+  padding: 8px 0;
+  background-color: var(--primary-bg-color);
+  margin-top: 8px;
+}
 .header {
-  padding: 5.2rem 3.5rem 4rem;
+  padding: 3rem 3.5rem 4rem;
 }
 .header__container {
   display: flex;
@@ -103,7 +132,7 @@ img {
 }
 .sitenav__list {
   display: flex;
-  margin-right: 13.4rem;
+  margin-right: 11rem;
 }
 .sitenav__item {
 }
@@ -113,12 +142,14 @@ img {
   color: var(--pirmary-color);
   text-transform: uppercase;
   letter-spacing: 1.575px;
+  border: none;
+  width: 100%;
 }
 .sitenav__item:not(:last-child) {
   margin-right: 3.6rem;
 }
 .logo-link {
-  margin-right: 46rem;
+  margin-right: 40rem;
 }
 .logo-link__img {
 }
@@ -134,6 +165,22 @@ img {
 }
 .header-button__img {
   width: 3.2rem;
+}
+.basket {
+  position: relative;
+}
+.basket::after {
+  content: "0";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-bg-color);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--pirmary-color);
+  right: -8px;
+  bottom: -8px;
 }
 /* HERO */
 .hero {
@@ -344,12 +391,15 @@ img {
 .login__input {
   width: 340px;
   border: transparent;
-  border-bottom: 1px solid var(--pirmary-color);
   margin-right: 1.6rem;
-  padding: 1.6rem;
+  padding: 1rem;
+  background-color: transparent;
+  outline: none;
+  border-bottom: 1px solid var(--pirmary-color);
 }
 .login__input:focus {
   border: transparent;
+  border-bottom: 1px solid var(--pirmary-color);
 }
 .login__btn {
   padding: 0 2.5rem;
@@ -410,6 +460,7 @@ img {
 }
 .footer-sub-list__line {
   margin-bottom: 2.5rem;
+  background-color: var(--primary-text-color);
 }
 .footer-sub-list__descr {
 }
@@ -433,6 +484,19 @@ img {
 .footer__link {
 }
 .footer__img {
+}
+.footer-links {
+  background-color: transparent;
+  border: transparent;
+  padding: 0;
+  margin: 0;
+}
+.footer-links option {
+  color: var(--primary-color);
+}
+.select-link {
+  background-color: var(--pirmary-color);
+  border: solid rebeccapurple;
 }
 /* RETINA BACKGROUND */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
